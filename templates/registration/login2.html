@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main1.css" type="text/css" media="screen" />
+    <title>S.T.E.P.</title>
+	<meta charset="utf-8">
+	</head>
+<body>
+    <!-- верхнее меню -->
+<ul id="menu">
+<li><img src="./img/ban1.png" id="image"></li>
+	<li><a href="/">Главная</a></li>
+
+	<li>
+		<a href="">Регистрация/Вход</a>
+		<ul>
+			<li>
+				<a href="registration_form.html">Регистрация</a>
+			</li>
+			<li>
+				<a href="login.html">Вход</a>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="">Проекты</a>
+		<ul>
+
+			<li>
+				<a href="">Проект 1</a>
+				<ul>
+					<li>
+						<a href="">Проект 11</a>
+						<ul>
+							<li><a href="">Проект 111</a></li>
+							<li><a href="">Проект 112</a></li>
+
+							<li><a href="">Проект 113</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">Проект 12</a>
+						<ul>
+							<li><a href="">Проект 121</a></li>
+							<li><a href="">Проект 122</a></li>
+
+							<li><a href="">Проект 123</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">Проект 13</a>
+						<ul>
+							<li><a href="">Проект 131</a></li>
+							<li><a href="">Проект 132</a></li>
+
+							<li><a href="">Проект 133</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="">Проект 2</a>
+				<ul>
+					<li>
+
+						<a href="">Проект 21</a>
+						<ul>
+							<li><a href="">Проект 211</a></li>
+							<li><a href="">Проект 212</a></li>
+							<li><a href="">Проект 213</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="">Проект 22</a>
+						<ul>
+							<li><a href="">Проект 221</a></li>
+							<li><a href="">Проект 222</a></li>
+							<li><a href="">Проект 223</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="">Проект 23</a>
+						<ul>
+							<li><a href="">Проект 231</a></li>
+							<li><a href="">Проект 232</a></li>
+							<li><a href="">Проект 233</a></li>
+						</ul>
+					</li>
+
+				</ul>
+			</li>
+			<li>
+				<a href="">Проект 3</a>
+				<ul>
+					<li>
+						<a href="">Проект 31</a>
+						<ul>
+
+							<li><a href="">Проект 311</a></li>
+							<li><a href="">Проект 312</a></li>
+							<li><a href="">Проект 313</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">Проект 32</a>
+
+						<ul>
+							<li><a href="">Проект 321</a></li>
+							<li><a href="">Проект 322</a></li>
+							<li><a href="">Проект 323</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="">Проект 33</a>
+
+						<ul>
+							<li><a href="">Проект 331</a></li>
+							<li><a href="">Проект 332</a></li>
+							<li><a href="">Проект 333</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+	</li>
+	<li><a href="">О нас</a></li>
+	<li><a href="">Контакты</a></li>
+</ul>
+
+
+
+
+
+<!--боковое меню-->
+<div id="list1" cellspacing="100px" >
+		<ol class="rectangle-list" >
+			<li><a href="">Пункт списка</a></li>
+			<li><a href="">Пункт списка</a></li>
+			<li><a href="">Пункт списка</a></li>
+			<li><a href="">Пункт списка</a></li>
+			<li><a href="">Пункт списка</a></li>
+		</ol>
+</div>
+
+
+
+
+
+
+
+<div id="main" align="left">
+<h1 {% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<form method="post" action=".">{% csrf_token %}
+    <input id="id_login" type="text" name="login" size="10"/>
+    <input id="id_pswd" type="password" name="pswd" size="10"/>
+  <input type="submit" value="{% trans 'Log in' %}" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+<p>{% trans "Forgot password" %}? <a href="{% url auth_password_reset %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Not member" %}? <a href="{% url registration_register %}">{% trans "Register" %}</a>!</p>
+{% endblock %}
+
+
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+      if ($.browser.msie && $.browser.version.substr(0,1)<7)
+      {
+        $('li').has('ul').mouseover(function(){
+            $(this).children('ul').css('visibility','visible');
+            }).mouseout(function(){
+            $(this).children('ul').css('visibility','hidden');
+            })
+      }
+    });
+</script>
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+	<dl>
+		<dt>Процесс №1 </dt>
+		<dd>
+			<span><em style="left:160px">80%</em></span>
+		</dd>
+		<dt>Процесс №2</dt>
+		<dd>
+			<span><em style="left:20px">10%</em></span>
+		</dd>
+		<dt>Процесс №3</dt>
+		<dd>
+			<span><em style="left:100px">50%</em></span>
+		</dd>
+	</dl>
+
+
+
+<div id="line">
+ИТАС МИЭМ
+</div>
+</body>
+</html>

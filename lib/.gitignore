@@ -1,0 +1,13 @@
+.project
+.pydevproject
+.idea/
++*.pyc
+*.mo
+*.swp
+log/
+xmlrunner
+build/
+.externalToolBuilders/
+env/
+.realsync
+.DS_Store
